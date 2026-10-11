@@ -64,8 +64,7 @@ export function register(on) {
       await updateStats({ get: (k) => $.store.get(k), set: (k, v) => $.store.set(k, v) }, (s) => recordTurn(s, now, e.usage, e.agentId === undefined));
     } catch {
       // best effort
-    }
-    return result;
+    }    return result;
   }).catch(($, e, next) => next(e));
 
   on('tool.call', async ($, e, next) => {
