@@ -22,13 +22,28 @@ export function emptyStats() {
 
 const isObject = (value) => value !== null && typeof value === 'object' && !Array.isArray(value);
 
+function normalizeDay(raw) {
+  if (!isObject(raw)) return null;
+  return {
+    ...emptyDay(),
+    ...raw,
+    tools: isObject(raw.tools) ? raw.tools : {},
+    hours: isObject(raw.hours) ? raw.hours : {},
+  };
+}
+
 export function normalizeStats(raw) {
   if (!isObject(raw) || raw.v !== 1 || !isObject(raw.days)) return emptyStats();
+  const days = {};
+  for (const [key, day] of Object.entries(raw.days)) {
+    const normalized = normalizeDay(day);
+    if (normalized) days[key] = normalized;
+  }
   return {
     v: 1,
-    days: raw.days,
+    days,
     files: isObject(raw.files) ? raw.files : {},
-    archive: isObject(raw.archive) ? { ...emptyDay(), ...raw.archive } : emptyDay(),
+    archive: normalizeDay(raw.archive) ?? emptyDay(),
   };
 }
 

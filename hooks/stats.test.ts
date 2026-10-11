@@ -133,3 +133,23 @@ describe('summarize', () => {
     expect(s.title).toBe('The Generalist');
   });
 });
+
+describe('damaged stored data', () => {
+  const now = at(2026, 10, 11);
+
+  test('bad day entries are dropped and good ones kept', () => {
+    const stats = normalizeStats({
+      v: 1, files: {}, archive: {},
+      days: { '2026-10-09': null, '2026-10-10': 'x', '2026-10-11': { prompts: 3 } },
+    });
+    expect(Object.keys(stats.days)).toEqual(['2026-10-11']);
+    expect(summarize(stats, 'year', now).prompts).toBe(3);
+  });
+
+  test('day missing tools or hours still records', () => {
+    const stats = normalizeStats({ v: 1, files: {}, archive: {}, days: { '2026-10-11': { prompts: 1, tools: null } } });
+    recordTool(stats, now, 'Bash');
+    recordPrompt(stats, now);
+    expect(summarize(stats, 'year', now).prompts).toBe(2);
+  });
+});
