@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
+  "name": "wrapped",
+  "description": "Your Claude Code year in one shareable card.",
+  "owner": { "name": "wrapped" },
+  "plugins": [{ "name": "wrapped", "source": "./", "description": "Your Claude Code year in one shareable card." }]
+}
