@@ -18,7 +18,7 @@ All stats stay on your machine, in the mod's local store.
 
 ## Install
 
-    /plugin marketplace add <owner>/wrapped-mod
+    /plugin marketplace add Ron-Nefyodov/wrapped-mod
     /plugin install wrapped@wrapped
 
 Or try it locally: `claude --plugin-dir .`
