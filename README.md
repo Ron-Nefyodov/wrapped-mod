@@ -23,7 +23,6 @@ All stats stay on your machine, in the mod's local store.
 
 Or try it locally: `claude --plugin-dir .`
 
-
 ## Develop
 
     npm test            # claude plugin test .
