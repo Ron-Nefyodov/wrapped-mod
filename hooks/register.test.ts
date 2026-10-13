@@ -57,8 +57,6 @@ describe('wrapped wiring', () => {
     expect(day.hours['23']).toBe(1);
   });
 
-
-
   test('turns record usage', async ($: any, on: any) => {
     const w = world(on);
     await $.turn.complete({
