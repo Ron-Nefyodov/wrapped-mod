@@ -2,6 +2,17 @@
 
 Your Claude Code year in one shareable card.
 
+## Why
+
+You spend hours a day with Claude Code. Wrapped shows you what that looks
+like: how much you ask, which tools do the work, which file you never stop
+editing, and when you code best.
+
+- **One card.** Every number on one screen, for this month, this year or all time.
+- **Shareable.** `/wrapped export` saves a 1200×630 SVG, ready for a post.
+- **Fun.** A title like *The Refactorer* and a persona like *Night owl*.
+- **Private.** Stats are counted on your machine. Nothing leaves it.
+
 ## Use
 
 | Command | What |
