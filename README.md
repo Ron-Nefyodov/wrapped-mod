@@ -2,6 +2,8 @@
 
 Your Claude Code year in one shareable card.
 
+![Wrapped card: prompts, tokens, tool calls, top tools, when you code](assets/demo.gif)
+
 ## Why
 
 You spend hours a day with Claude Code. Wrapped shows you what that looks
